@@ -4,7 +4,7 @@
 
 **Explore it. Explode it. Look inside.**
 
-HoloHand is a browser-based 3D visualization workspace that combines real-time hand tracking, gesture-driven interaction, and holographic point-cloud rendering. It enables users to explore procedural educational models, separate components in exploded views, and manipulate virtual objects using natural hand gestures.
+HoloHand is a browser-based 3D visualization workspace that combines real-time hand tracking, gesture-driven interaction, and holographic point-cloud rendering. Explore procedural educational models, separate their components using exploded views, and manipulate virtual objects using natural hand gestures.
 
 Built with **TypeScript, Three.js, WebGL, MediaPipe, and Vite**, HoloHand also supports mouse, touch, and keyboard controls for accessible interaction without a webcam.
 
@@ -22,7 +22,7 @@ The dashboard brings together the 3D viewport, model selection, gesture guidance
 
 ![HoloHand 3D model visualization](public/images/holohand-models.png)
 
-Explore procedural mechanical and anatomical models with animated point clouds, component separation, and visual highlighting.
+Explore mechanical and anatomical models with animated point clouds, component separation, and visual highlighting.
 
 ### Gesture Interaction
 
@@ -30,22 +30,19 @@ Explore procedural mechanical and anatomical models with animated point clouds, 
 
 Use webcam-based hand tracking to interact with virtual objects, or switch to mouse and keyboard controls whenever needed.
 
-> **Media paths:** Store the three images in `public/images/` using the filenames shown above, or update the paths to match your actual files.
+> **Note:** Place the three images in `public/images/` using the filenames shown above. Replace the filenames if your actual images use different names.
 
 ---
 
 ## 🎬 Demo Video
 
-Watch the HoloHand demonstration to see the interface, 3D models, exploded-view animation, and gesture-driven interactions.
+Watch the HoloHand demonstration to explore the interface, 3D models, exploded-view animations, and gesture-driven interactions.
 
-<video controls playsinline preload="metadata" width="100%">
-  <source src="public/videos/holohand-demo.mp4" type="video/mp4">
-  Your browser does not support embedded video. Open the demo file from the repository's public/videos directory.
-</video>
+**▶️ [Watch the HoloHand Demo Video](public/videos/holohand-demo.mp4)**
 
-**Video file:** `public/videos/holohand-demo.mp4`
+**Video location:** `public/videos/holohand-demo.mp4`
 
-Replace this path with your actual video filename if necessary. Git hosting platforms may not render HTML video directly inside a README; if the video does not play, link to the video file or use a hosted demo.
+> **GitHub note:** GitHub may not render an HTML `<video>` element inside a README. The relative link above provides a way to access the repository file, but it is not guaranteed to produce an inline player. For inline playback, upload the video through GitHub's supported video attachment workflow and use the generated URL.
 
 ---
 
@@ -54,54 +51,56 @@ Replace this path with your actual video filename if necessary. Git hosting plat
 ### 🖐️ Real-Time Hand Tracking
 
 * Webcam-based hand landmark detection using MediaPipe Hand Landmarker.
-* Support for zero, one, or two detected hands.
+* Support for zero, one, or two detected hands, where implemented.
 * Gesture stabilization to reduce accidental transitions.
-* Configurable tracking behavior and sensitivity where implemented.
-* Browser-based processing without requiring a dedicated application backend.
+* Configurable tracking behavior and sensitivity, where supported.
+* Browser-based vision processing without requiring a dedicated application backend.
 
 ### 🧠 Gesture-Based Interaction
 
-* Open palm to expand the model.
-* Closed fist to assemble the model.
-* Hand movement to rotate or tilt the scene.
-* Pointing to highlight or select components.
-* Pinching to grab and drag components.
-* Two-hand movement to control zoom.
-* Peace sign to switch between models.
+The intended gesture controls include:
 
-Actual gesture behavior depends on the implementation, tracking confidence, lighting, and camera position.
+* **Open palm:** Expand the model.
+* **Closed fist:** Assemble the model.
+* **Hand movement:** Rotate or tilt the scene.
+* **Index finger pointing:** Highlight or select components.
+* **Pinching:** Grab and drag components.
+* **Two-hand movement:** Control zoom.
+* **Peace sign:** Switch between models.
+
+Actual behavior depends on the implemented gesture mappings, tracking confidence, lighting, and camera position.
 
 ### 🌌 Holographic 3D Rendering
 
-* Three.js and WebGL rendering.
+* Three.js and WebGL-based rendering.
 * Custom GLSL shader effects.
 * Animated point-cloud geometry.
-* Exploded and assembled views.
+* Exploded and assembled model views.
 * Component highlighting and selection.
 * Smooth model transitions.
 * Interactive camera and scene controls.
-* Performance-conscious GPU resource management.
+* GPU resource management.
 
 ### 🧩 Educational 3D Models
 
-Explore four procedural models:
+HoloHand is designed to support four procedural educational models.
 
-| Model                  | Example components                                                               |
-| ---------------------- | -------------------------------------------------------------------------------- |
-| Turbofan Jet Engine    | Fan, compressor stages, combustor, turbines, shaft, nozzle                       |
-| Radial Aircraft Engine | Cylinders, pistons, connecting rods, crankshaft                                  |
-| Sports Car             | Body, chassis, wheels, brakes, drivetrain, interior                              |
-| Human Brain            | Cerebral regions, lobes, cerebellum, brainstem, and other represented structures |
+| Model                  | Example Components                                                     |
+| ---------------------- | ---------------------------------------------------------------------- |
+| Turbofan Jet Engine    | Fan, compressor stages, combustor, turbines, shaft, nozzle             |
+| Radial Aircraft Engine | Cylinders, pistons, connecting rods, crankshaft                        |
+| Sports Car             | Body, chassis, wheels, brakes, drivetrain, interior                    |
+| Human Brain            | Cerebral regions, lobes, cerebellum, brainstem, represented structures |
 
-These models are designed for interactive visualization and education. They are not validated CAD assemblies, engineering simulations, or clinical anatomical models.
+These models are intended for interactive visualization and education. They are not validated CAD assemblies, engineering simulations, or clinical anatomical models.
 
 ### 🖱️ Multiple Input Methods
 
-HoloHand remains usable without webcam input.
+HoloHand can be used without webcam input.
 
 * Mouse-based rotation and zoom.
 * Click or tap to select components.
-* Keyboard shortcuts.
+* Keyboard shortcuts, where implemented.
 * Accessible buttons and sliders.
 * Manual camera and model controls.
 
@@ -109,7 +108,7 @@ HoloHand remains usable without webcam input.
 
 The intended interaction architecture separates perception, gesture classification, intent resolution, action validation, and scene execution.
 
-A typed interaction interface helps prevent invalid actions and keeps the gesture system independent of rendering internals. Core functionality does not require a paid LLM API.
+A typed interaction interface can help prevent invalid actions and keep gesture recognition independent of rendering internals. Core interaction functionality is designed not to require a paid LLM API.
 
 ---
 
@@ -118,7 +117,7 @@ A typed interaction interface helps prevent invalid actions and keeps the gestur
 | Technology             | Purpose                                    |
 | ---------------------- | ------------------------------------------ |
 | TypeScript             | Typed application logic                    |
-| JavaScript ES modules  | Modular browser execution                  |
+| JavaScript ES Modules  | Modular browser execution                  |
 | Three.js               | 3D scene management and rendering          |
 | WebGL / GLSL           | GPU rendering and custom shader effects    |
 | MediaPipe Tasks Vision | Hand landmark detection                    |
@@ -126,73 +125,76 @@ A typed interaction interface helps prevent invalid actions and keeps the gestur
 | Vite                   | Development server and production bundling |
 | Vitest                 | Unit and integration testing               |
 | Playwright             | Browser end-to-end testing                 |
-| ESLint and Prettier    | Code quality and formatting                |
+| ESLint                 | Code quality and linting                   |
+| Prettier               | Code formatting                            |
 
-The exact dependencies and versions should be verified against the delivered `package.json` and lockfile.
+The actual dependencies and versions are defined by the project's `package.json` and lockfile.
 
 ---
 
 ## 💻 System Requirements
 
-* Node.js 18 or later, or the version required by the project dependencies.
+* Node.js 18 or later, or the version required by the installed dependencies.
 * npm.
 * A modern browser with WebGL support.
-* Webcam access for gesture interaction.
-* `localhost` during development or HTTPS when deployed for camera access.
+* Webcam access for gesture-based interaction.
+* `localhost` during development or HTTPS in deployment for camera access.
 
-A dedicated GPU is **not mandatory**. Integrated graphics can be sufficient for moderate scenes, while hardware acceleration is recommended for smoother rendering and higher particle counts.
+A dedicated GPU is not mandatory. Integrated graphics may be sufficient for moderate scenes, while hardware acceleration is recommended for smoother rendering and higher particle counts.
 
-Actual performance depends on the processor, graphics hardware, browser, rendering resolution, and model complexity.
+Performance depends on the processor, graphics hardware, browser, rendering resolution, and model complexity.
 
 ---
 
 ## 🚀 Installation and Setup
 
-### 1. Clone or download the repository
+### 1. Clone the Repository
+
+Replace the placeholder URL with your actual repository URL.
 
 ```bash
 git clone <YOUR_REPOSITORY_URL>
-cd HoloHand
+cd HoloHand-Gesture-Agent-3D
 ```
 
-If you already downloaded the project, open a terminal in its root directory instead.
+If you have already downloaded the project, open a terminal in its root directory instead.
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-The setup script may prepare local MediaPipe assets. Network access may be needed if the model or runtime files are not already available.
+If the project includes a setup script, run the configured command to prepare the required MediaPipe assets. Network access may be necessary if those assets are not already available locally.
 
-### 3. Start the development server
+### 3. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL printed in your terminal, commonly:
+Open the local URL printed in your terminal. With the default Vite configuration, it is commonly:
 
 ```text
 http://localhost:5173
 ```
 
-### 4. Start the application
+### 4. Start Using HoloHand
 
-1. Open the HoloHand interface.
-2. Select **Start camera**.
-3. Grant permission to use the webcam.
+1. Open the application in your browser.
+2. Select **Start Camera**.
+3. Grant permission to access your webcam.
 4. Wait for the hand-tracking model to initialize.
-5. Place your hand in the camera's field of view.
-6. Use the gesture guide to interact with the 3D scene.
+5. Place your hand within the camera's field of view.
+6. Follow the gesture guide to interact with the 3D scene.
 
-Alternatively, choose **Use mouse instead** or use the manual controls if you do not want to use the webcam.
+Alternatively, select **Use Mouse Instead** or use the manual controls if you do not want to use the webcam.
 
 ---
 
 ## 🖐️ Gesture Controls
 
-| Gesture                          | Action                               |
+| Gesture                          | Intended Action                      |
 | -------------------------------- | ------------------------------------ |
 | Open palm                        | Expand the model                     |
 | Closed fist                      | Assemble the model                   |
@@ -204,67 +206,69 @@ Alternatively, choose **Use mouse instead** or use the manual controls if you do
 | Peace sign                       | Switch to the next model             |
 | No hand detected                 | Return to a safe, non-dragging state |
 
-Gesture recognition is not perfect. Hand occlusion, low lighting, camera distance, and ambiguous poses may affect the result.
+Gesture recognition is not perfect. Hand occlusion, poor lighting, camera distance, and ambiguous poses can affect recognition accuracy.
+
+The exact mappings depend on the current application implementation.
 
 ---
 
 ## ⌨️ Keyboard and Manual Controls
 
-The application also provides manual interaction methods.
+HoloHand also provides manual interaction methods.
 
-| Input        | Action                                              |
-| ------------ | --------------------------------------------------- |
-| Mouse drag   | Rotate the scene                                    |
-| Mouse wheel  | Zoom                                                |
-| Click or tap | Select or inspect a component                       |
-| Space        | Toggle the assembled/exploded state, if implemented |
-| Arrow keys   | Navigate or control the scene, as implemented       |
-| `1`–`4`      | Select a model, if implemented                      |
-| `R`          | Reset the view, if implemented                      |
+| Input        | Intended Action                                 |
+| ------------ | ----------------------------------------------- |
+| Mouse drag   | Rotate the scene                                |
+| Mouse wheel  | Zoom                                            |
+| Click or tap | Select or inspect a component                   |
+| Space        | Toggle assembled/exploded state, if implemented |
+| Arrow keys   | Navigate or control the scene, as implemented   |
+| `1`–`4`      | Select a model, if implemented                  |
+| `R`          | Reset the view, if implemented                  |
 
-Check the application's help panel or input bindings for the exact shortcuts supported by your current build.
+Check the application's help panel and input bindings for the shortcuts supported by your current build.
 
 ---
 
 ## 🏗️ Architecture Overview
 
-The application follows a modular processing pipeline:
+HoloHand is designed around a modular processing pipeline:
 
 ```text
-┌──────────────────────┐
-│    Webcam / Input    │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ MediaPipe Hand       │
-│ Landmark Detection   │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Landmark Processing  │
-│ Gesture Classification│
-│ Temporal Stabilization│
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Interaction Agent    │
-│ Intent Resolution    │
-│ Action Validation    │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Interaction Interface│
-│ Scene State Updates  │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ Three.js Scene       │
-│ Models and Shaders   │
-└──────────┬───────────┘
-           ↓
-┌──────────────────────┐
-│ WebGL Rendering      │
-└──────────────────────┘
+┌──────────────────────────┐
+│      Webcam / Input      │
+└────────────┬─────────────┘
+             ↓
+┌──────────────────────────┐
+│ MediaPipe Hand Detection │
+│    Landmark Extraction  │
+└────────────┬─────────────┘
+             ↓
+┌──────────────────────────┐
+│   Landmark Processing    │
+│  Gesture Classification  │
+│  Temporal Stabilization  │
+└────────────┬─────────────┘
+             ↓
+┌──────────────────────────┐
+│    Interaction Agent     │
+│     Intent Resolution    │
+│     Action Validation    │
+└────────────┬─────────────┘
+             ↓
+┌──────────────────────────┐
+│   Interaction Interface  │
+│    Scene State Updates   │
+└────────────┬─────────────┘
+             ↓
+┌──────────────────────────┐
+│       Three.js Scene     │
+│    Models and Shaders    │
+└────────────┬─────────────┘
+             ↓
+┌──────────────────────────┐
+│      WebGL Rendering     │
+└──────────────────────────┘
 ```
 
 ### Architectural Responsibilities
@@ -277,16 +281,16 @@ The application follows a modular processing pipeline:
 * **Model layer:** Procedural geometry, component definitions, and model registration.
 * **UI layer:** Controls, tracking status, model selection, settings, and error feedback.
 
-See `ARCHITECTURE.md` for implementation-specific details if included in the repository.
+See `ARCHITECTURE.md` for implementation-specific details if the file is included in the repository.
 
 ---
 
 ## 📂 Project Structure
 
-The following is a representative structure for the modular application:
+The following is a representative project structure. Your actual repository may differ.
 
 ```text
-HoloHand/
+HoloHand-Gesture-Agent-3D/
 ├── public/
 │   ├── images/
 │   │   ├── holohand-dashboard.png
@@ -325,13 +329,13 @@ HoloHand/
 └── SECURITY.md
 ```
 
-This is a target structure. Keep the documentation synchronized with the actual repository rather than creating empty directories solely to match the example.
+Keep this documentation synchronized with your actual repository. Do not create empty directories or placeholder files solely to match this example.
 
 ---
 
 ## 🧪 Testing and Quality Assurance
 
-Run the quality checks configured in your `package.json`:
+Run the quality checks configured in your `package.json`.
 
 ```bash
 npm run typecheck
@@ -342,13 +346,13 @@ npm run test:e2e
 npm run build
 ```
 
-To preview the production build locally:
+Not every repository defines all these scripts. Check `package.json` and use only the commands configured in your project.
+
+To preview a production build locally, if the corresponding script is configured:
 
 ```bash
 npm run preview
 ```
-
-Not every repository defines every script. If a command is unavailable, configure the associated tool and script before relying on it.
 
 ### Recommended Test Coverage
 
@@ -363,18 +367,16 @@ Not every repository defines every script. If a command is unavailable, configur
 * Mouse and keyboard interaction.
 * Production build and browser rendering.
 
-Use mocks for webcam and MediaPipe dependencies in automated tests. Browser tests should not require a physical camera to test the manual-control workflow.
+Use mocks for webcam and MediaPipe dependencies in automated tests. Browser tests should be able to exercise manual controls without requiring a physical camera.
 
 ---
 
 ## ⚡ Performance
 
-HoloHand uses browser-based 3D rendering and real-time vision processing.
-
-Performance improvements should include:
+Performance improvements to consider include:
 
 * Reusing geometry buffers and materials.
-* Avoiding unnecessary allocations in animation loops.
+* Avoiding unnecessary allocations inside animation loops.
 * Limiting concurrent hand-tracking inference operations.
 * Adjusting particle density to device capabilities.
 * Reducing work when the browser tab is hidden.
@@ -387,40 +389,42 @@ A target of 60 FPS is useful for development, but actual frame rates must be mea
 
 ## 🔒 Privacy and Security
 
-HoloHand is designed around local browser processing.
+HoloHand is designed around local browser processing. Verify the actual implementation and network behavior before making stronger privacy claims.
+
+Recommended practices include:
 
 * Request webcam access only after a clear user action.
 * Explain why camera access is required.
-* Stop media tracks when tracking is stopped or the application is disposed.
+* Stop media tracks when tracking stops or the application is disposed.
 * Do not record or upload video unless a separately documented feature explicitly does so.
-* Document any external MediaPipe asset downloads or CDN fallbacks.
+* Document external MediaPipe asset downloads and CDN fallbacks.
 * Never expose private API keys in frontend code.
 * Validate external asset sources and handle loading failures.
 * Avoid collecting unnecessary personal data.
 
-Review `SECURITY.md` if present. Confirm privacy claims against the actual implementation and network behavior rather than relying on documentation alone.
+Review `SECURITY.md` if it is present in the repository.
 
 ---
 
 ## 🧰 Troubleshooting
 
-### Camera access fails
+### Camera Access Fails
 
 * Use `localhost` or HTTPS.
-* Allow camera access in the browser's site settings.
+* Allow camera access in your browser's site settings.
 * Check whether another application is using the webcam.
 * Confirm that a camera device is available.
 * Retry startup or use manual controls.
 
-### MediaPipe does not initialize
+### MediaPipe Does Not Initialize
 
 * Check the browser console for errors.
 * Verify that the hand-landmark model and WASM assets exist.
 * Confirm that configured asset URLs are reachable.
-* Check the network connection if a CDN fallback is used.
+* Check your network connection if a CDN fallback is used.
 * Retry initialization after resolving the reported error.
 
-### The 3D scene is slow
+### The 3D Scene Is Slow
 
 * Use a current browser.
 * Enable hardware acceleration if available.
@@ -428,17 +432,25 @@ Review `SECURITY.md` if present. Confirm privacy claims against the actual imple
 * Close GPU-intensive applications.
 * Inspect WebGL and shader errors in the developer console.
 
-### Gesture recognition is unreliable
+### Gesture Recognition Is Unreliable
 
 * Improve lighting.
-* Keep the hand fully visible.
+* Keep your hand fully visible.
 * Avoid rapid movements while testing.
-* Move the hand closer to the camera if landmarks are unstable.
-* Check the tracking status and gesture confidence, if exposed.
+* Adjust your distance from the camera.
+* Check the tracking status and gesture confidence if available.
 
-### A script is missing
+### The Demo Video Does Not Play
 
-Inspect `package.json` to determine which commands are actually configured. Install or configure the required tooling before running the associated check.
+* Verify that `public/videos/holohand-demo.mp4` exists.
+* Confirm that the video has been committed and pushed to the repository.
+* Use the relative Markdown link provided in the Demo Video section.
+* If GitHub does not render the video inline, upload it through GitHub's supported video attachment workflow and use the generated URL.
+* Alternatively, host the video on a video platform and link to it.
+
+### A Script Is Missing
+
+Inspect `package.json` to determine which commands are configured. Install or configure the required tooling before running the associated check.
 
 ---
 
@@ -453,9 +465,9 @@ Potential future improvements include:
 * Enhanced accessibility and localization.
 * Expanded automated browser testing.
 * Optional AI-assisted scene exploration through a validated interaction interface.
-* Additional model import formats, if compatible with the rendering architecture.
+* Additional model import formats compatible with the rendering architecture.
 
-Roadmap items are proposals, not promises that these features are already implemented.
+Roadmap items are proposals, not guarantees that these features are already implemented.
 
 ---
 
@@ -482,15 +494,14 @@ If no license file is present, establish the intended license before redistribut
 
 ## 🙌 Acknowledgments
 
-HoloHand builds on the broader web graphics and computer-vision ecosystem, including:
+HoloHand builds on the broader web graphics and computer-vision ecosystem.
 
-* [Three.js](https://threejs.org/docs/)
-* [MediaPipe Hand Landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/web_js)
-* [Vite](https://vite.dev/guide/)
-* [Vitest](https://vitest.dev/guide/)
-* [Playwright](https://playwright.dev/docs/intro)
+* [Three.js Documentation](https://threejs.org/docs/)
+* [MediaPipe Hand Landmarker for Web](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/web_js)
+* [Vite Documentation](https://vite.dev/guide/)
+* [Vitest Documentation](https://vitest.dev/guide/)
+* [Playwright Documentation](https://playwright.dev/docs/intro)
 
 ---
 
-**HoloHand — Explore the invisible structure of things through natural interaction.**
-# HoloHand
+**HoloHand — Explore the invisible structure of things through natural interaction.** ✋✨
