@@ -1,0 +1,32 @@
+{
+  "name": "gesture-agent-3d",
+  "private": true,
+  "version": "2.0.0",
+  "description": "HoloHand - hand-controlled exploded 3D views (MediaPipe + Three.js)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint .",
+    "format:check": "prettier --check \"src/agent/**/*.ts\" \"src/gestures/**/*.ts\" \"tests/**/*.ts\" README.md ARCHITECTURE.md SECURITY.md tsconfig.json vitest.config.ts playwright.config.ts eslint.config.js",
+    "postinstall": "node scripts/setup.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "0.10.14",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/three": "^0.186.0",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^5.4.0",
+    "vitest": "^2.1.9"
+  }
+}
